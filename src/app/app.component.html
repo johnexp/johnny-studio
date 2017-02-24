@@ -1,0 +1,11 @@
+<h1>
+	{{title}}
+</h1>
+<form>
+	<md-select placeholder="Field Type" [(ngModel)]="fieldType" name="fieldType">
+		<md-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.value" >
+			{{ fieldType.viewValue }}
+		</md-option>
+	</md-select>
+	<button md-raised-button>Add Field</button>
+</form>
