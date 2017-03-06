@@ -2,10 +2,22 @@
 	{{title}}
 </h1>
 <form>
-	<md-select placeholder="Field Type" [(ngModel)]="fieldType" name="fieldType">
-		<md-option *ngFor="let fieldType of fieldTypes" [value]="fieldType.value" >
-			{{ fieldType.viewValue }}
-		</md-option>
-	</md-select>
+	<section class="custom-section">
+		<md-select placeholder="Model Field Type" [(ngModel)]="modelFieldType" name="modelFieldType">
+			<md-option *ngFor="let modelFieldType of modelFieldTypes" [value]="modelFieldType.value" >
+				{{ modelFieldType.viewValue }}
+			</md-option>
+		</md-select>
+	</section>
+	<section class="custom-section">
+		<md-checkbox name="hasViewField" [(ngModel)]="hasViewField">Has View Field?</md-checkbox>
+	</section>
+	<section class="custom-section">
+		<md-select placeholder="Field Type" [(ngModel)]="viewFieldType" name="viewFieldType" [disabled]="!hasViewField">
+			<md-option *ngFor="let viewFieldType of viewFieldTypes" [value]="viewFieldType.value" >
+				{{ viewFieldType.viewValue }}
+			</md-option>
+		</md-select>
+	</section>
 	<button md-raised-button>Add Field</button>
 </form>

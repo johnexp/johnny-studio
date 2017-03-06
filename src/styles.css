@@ -43,3 +43,10 @@
 body {
 	font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
+
+.custom-section {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	height: 60px;
+}
